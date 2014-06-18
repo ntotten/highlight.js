@@ -319,7 +319,7 @@ function() {
       if (top.subLanguageMode == 'continuous') {
         top.continuation.top = result.top;
       }
-      return buildSpan(result.language, result.value, false, true);
+      return buildSpan(result.language, result.value, false, !options.prefixSubLanguages);
     }
 
     function processBuffer() {
@@ -534,6 +534,7 @@ function() {
 
   var options = {
     classPrefix: 'hljs-',
+    prefixSubLanguages: false,
     tabReplace: null,
     useBR: false,
     languages: undefined
